@@ -1,4 +1,4 @@
-Q) Based on the discount, count how many orders were placed?
+Query 1) Based on the discount, count how many orders were placed?
 
 Answer) 
 select i.discount, count(*) as count_orders from sales.order_items  i 
@@ -8,7 +8,7 @@ group by i.discount
 order by 2 desc
 
 
-Q) Create net sales report of staff for every month. Take the year as input.
+Query 2) Create net sales report of staff for every month. Take the year as input.
 
 Answer)
 
@@ -62,7 +62,7 @@ END;
 EXEC getSalesReport 2017;
 
 
-Q) Rank the stores based on the net sales
+Query 3) Rank the stores based on the net sales
 
 Answer)
 select store_name, rank() over (order by sum(net_sales) desc) as rank,
